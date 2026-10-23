@@ -1,0 +1,9 @@
+{
+  "name": "math-testpaper-generator-mathjax",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Local vector equation renderer; no browser or API service",
+  "engines": {"node": ">=20"},
+  "dependencies": {"mathjax-full": "3.2.2"},
+  "overrides": {"@xmldom/xmldom": "0.9.12"}
+}

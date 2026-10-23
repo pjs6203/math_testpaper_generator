@@ -1,0 +1,6 @@
+# Versions used for the fresh-environment end-to-end verification (Python 3.12).
+reportlab==4.5.1
+pypdf==6.21.2
+pypdfium2==5.14.0
+Pillow==12.3.0
+charset-normalizer==3.5.2

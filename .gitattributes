@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.ttf -text
+*.pdf -text
+*.png -text
+# Preserve upstream font license files byte-for-byte, including whitespace.
+src/math_testpaper/assets/fonts/OFL-*.txt -text -whitespace

@@ -1,0 +1,10 @@
+# math_testpaper_generator
+
+> AI-assisted Korean mathematics exam conversion. The calling AI reads/translates a supplied PDF; this repository typesets and validates the result without an AI API or desktop automation.
+
+- [AI instructions](AGENTS.md): Read first. Complete PDF-to-JSON-to-PDF workflow and review gates.
+- [Quick entry](AI_START_HERE.md): Short command sequence.
+- [Data format](docs/format.md): Rich text, TeX, source references, figures, custom fonts.
+- [Schema](schema/exam.schema.json): Version 1 interchange format.
+- [Demo](examples/demo/exam.json): Original, runnable mathematical questions.
+- [Architecture](docs/architecture.md): Coordinate system and verification limits.

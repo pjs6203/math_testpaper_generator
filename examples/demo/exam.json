@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "title": "수학 문제지 변환 예제",
+  "subject": "수 학",
+  "exam_code": "DEMO",
+  "edition": "조판 예제",
+  "language": "ko-KR",
+  "duration_minutes": 60,
+  "expected_question_count": 7,
+  "expected_total_marks": 14,
+  "instructions": ["이 문항들은 프로그램 시연을 위해 작성한 예제입니다.", "복수정답형 문항은 옳은 선택지를 모두 고르시오."],
+  "glossary": ["실수 전체의 집합은 $\\mathbb{R}$로 나타냅니다."],
+  "notes": ["분수, 행렬, 구간별 함수, 복수정답, 수치답, 벡터 그림과 홀수 문항 수를 확인하는 예제입니다."],
+  "questions": [
+    {"number": 1, "score": 2, "type": "MCQ", "stem": "무한급수\n$$\\sum_{n=1}^{\\infty}\\frac{1}{2^n}$$\n의 값은?", "choices": ["$\\dfrac12$", "$1$", "$2$", "$4$"], "source_pages": [], "review": {"status": "verified", "notes": ["자체 작성 예제"]}},
+    {"number": 2, "score": 2, "type": "NAT", "stem": "다음 정적분의 값을 구하시오.\n$$\\int_0^1 3x^2\\,dx$$", "rounding": "(소수 셋째 자리에서 반올림하여 소수 둘째 자리까지 나타내시오.)", "choices": [], "source_pages": [], "review": {"status": "verified", "notes": ["자체 작성 예제"]}},
+    {"number": 3, "score": 2, "type": "MSQ", "stem": "행렬\n$$A=\\begin{pmatrix}1&2\\\\0&3\\end{pmatrix}$$\n에 대한 설명 중 옳은 것을 모두 고르시오.", "choices": ["$\\det(A)=3$이다.", "$A$는 가역행렬이다.", "$0$은 $A$의 고유값이다.", "$A$의 계수는 $1$이다."], "source_pages": [], "review": {"status": "verified", "notes": ["자체 작성 예제"]}},
+    {"number": 4, "score": 2, "type": "MCQ", "stem": "함수 $f:\\mathbb{R}\\to\\mathbb{R}$를\n$$f(x)=\\begin{cases}x^2\\sin(1/x)&x\\ne0,\\\\0&x=0\\end{cases}$$\n으로 정의하자. $f'(0)$의 값은?", "choices": ["$-1$", "$0$", "$1$", "존재하지 않는다."], "source_pages": [], "review": {"status": "verified", "notes": ["자체 작성 예제"]}},
+    {"number": 5, "score": 2, "type": "FREE", "stem": "아래 그림의 곡선은 $y=x^2$이다. 구간 $0\\le x\\le1$에서 곡선과 $x$축 사이 영역의 넓이를 적분으로 나타내고 구하시오.", "figures": [{"path": "parabola.pdf", "page": 1, "width": 230, "caption": "그림의 좌표축과 곡선은 벡터 PDF로 보존됩니다."}], "choices": [], "source_pages": [], "review": {"status": "verified", "notes": ["자체 작성 예제"]}},
+    {"number": 6, "score": 2, "type": "NAT", "stem": "두 번 미분가능한 함수 $f$가\n$$f(x)=x^3-2x^2+x$$\n일 때, $f''(1)$의 값을 구하시오.", "choices": [], "source_pages": [], "review": {"status": "verified", "notes": ["자체 작성 예제"]}},
+    {"number": 7, "score": 2, "type": "FREE", "stem": "임의의 두 실수 $a,b$에 대하여\n$$(a+b)^2\\le2(a^2+b^2)$$\n가 성립함을 보이시오.\n\n마지막 문항이 홀수 번호이므로 오른쪽 단은 비워 둡니다.", "choices": [], "source_pages": [], "review": {"status": "verified", "notes": ["자체 작성 예제"]}}
+  ]
+}

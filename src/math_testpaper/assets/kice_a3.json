@@ -1,0 +1,21 @@
+{
+  "name": "kice_a3",
+  "page_width": 842,
+  "page_height": 1191,
+  "left": 87.9,
+  "right": 754.02,
+  "divider": 420.96,
+  "columns": [87.9, 434.4],
+  "indent": 27,
+  "text_width": 292,
+  "first_rule_top": 917.339,
+  "rule_top": 1063.499,
+  "rule_bottom": 106.559,
+  "first_question_top": 902,
+  "question_top": 1047,
+  "content_bottom": 128,
+  "body_size": 11.5,
+  "math_size": 10.98,
+  "minimum_math_size": 9,
+  "line_gap": 7.5
+}

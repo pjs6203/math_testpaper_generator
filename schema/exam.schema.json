@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/pjs6203/math_testpaper_generator/schema/exam.schema.json",
+  "title": "Mathematics exam interchange format v1",
+  "type": "object",
+  "required": ["schema_version", "title", "subject", "exam_code", "edition", "questions"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "title": {"type": "string", "minLength": 1},
+    "subject": {"type": "string", "minLength": 1},
+    "exam_code": {"type": "string", "minLength": 1},
+    "edition": {"type": "string", "minLength": 1},
+    "language": {"type": "string"},
+    "duration_minutes": {"type": ["number", "null"], "exclusiveMinimum": 0},
+    "expected_question_count": {"type": ["integer", "null"], "minimum": 1},
+    "expected_total_marks": {"type": ["number", "null"], "minimum": 0},
+    "source": {
+      "type": "object",
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "url": {"type": ["string", "null"]}
+      }
+    },
+    "instructions": {"$ref": "#/$defs/strings"},
+    "glossary": {"$ref": "#/$defs/strings"},
+    "notes": {"$ref": "#/$defs/strings"},
+    "questions": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/question"}}
+  },
+  "$defs": {
+    "strings": {"type": "array", "items": {"type": "string"}},
+    "question": {
+      "type": "object",
+      "required": ["number", "type", "stem", "review"],
+      "properties": {
+        "number": {"type": "integer", "minimum": 1},
+        "score": {"type": ["number", "null"], "minimum": 0},
+        "type": {"enum": ["MCQ", "MSQ", "NAT", "FREE"]},
+        "stem": {"type": "string", "minLength": 1},
+        "choices": {"type": "array", "maxItems": 8, "items": {"type": "string", "minLength": 1}},
+        "rounding": {"type": "string"},
+        "source_pages": {"type": "array", "items": {"type": "integer", "minimum": 1}},
+        "review": {"type": "object", "required": ["status"], "properties": {"status": {"enum": ["pending", "verified"]}, "notes": {"$ref": "#/$defs/strings"}}},
+        "figures": {"type": "array", "items": {"$ref": "#/$defs/figure"}}
+      },
+      "allOf": [
+        {"if": {"properties": {"type": {"enum": ["MCQ", "MSQ"]}}}, "then": {"required": ["choices"], "properties": {"choices": {"minItems": 2}}}},
+        {"if": {"properties": {"type": {"enum": ["NAT", "FREE"]}}}, "then": {"properties": {"choices": {"maxItems": 0}}}}
+      ]
+    },
+    "figure": {
+      "type": "object", "required": ["path"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "page": {"type": "integer", "minimum": 1},
+        "bbox": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "number"}},
+        "width": {"type": "number", "exclusiveMinimum": 0},
+        "caption": {"type": "string"}
+      }
+    }
+  }
+}
